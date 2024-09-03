@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}User Dashboard{% endblock %}
+
+{% block content %}
+    <h2>Welcome, {{ user.username }}</h2>
+    <p>Your current credits: {{ user.credits }}</p>
+    <a href="{% url 'enter_waste' %}">Enter Waste</a>
+{% endblock %}
