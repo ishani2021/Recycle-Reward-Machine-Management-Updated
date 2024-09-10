@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Company Dashboard{% endblock %}
+
+{% block content %}
+    <h2>Company Dashboard</h2>
+    <a href="{% url 'place_order' %}">Place New Order</a>
+
+    <h3>Your Orders:</h3>
+    <ul>
+        {% for order in orders %}
+            <li>
+                {{ order.waste_type }} - {{ order.quantity }} units ({{ order.status }})
+                <a href="{% url 'cancel_order' order.id %}">Cancel</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,9 +1,11 @@
-{% extends 'base.html' %}
-
-{% block title %}User Dashboard{% endblock %}
-
-{% block content %}
-    <h2>Welcome, {{ user.username }}</h2>
-    <p>Your current credits: {{ user.credits }}</p>
-    <a href="{% url 'enter_waste' %}">Enter Waste</a>
-{% endblock %}
+{%extends 'dashboard.html'%}
+{%block title%} User Dashboard {%endblock%}
+{%block nav_options%}
+<li><a href="enter_waste/">Enter Waste Item</a></li>
+<li><a href="view_credits/">View Credit Score</a></li>
+<li><a href="withdraw_credits/">Withdraw Credits</a></li>
+{%endblock%}
+{%block text%}
+<h2> Welcome User! </h2>
+<p> This is an initiative to keep the environment green and clean. Help us by disposing waste into this machine, and you can enjoy free credits in return! </p>
+{%endblock%}

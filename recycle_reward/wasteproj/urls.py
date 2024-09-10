@@ -18,11 +18,19 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path
 from wasteapp.views import place_order_view, cancel_order_view, company_dashboard, \
-user_dashboard, enter_waste_view, update_profile, login_view, company_check, view_orders_view
+user_dashboard, enter_waste_view, update_profile, login_view, company_check, view_orders_view, initial, select_user, \
+view_dashboard, user_dashboard_home, company_dashboard_home, login_base, user_login
 
 urlpatterns = [
     # Admin site
     path('admin/', admin.site.urls),
+    path('selectuser/',select_user),
+    path('',initial),
+    path('dash/', view_dashboard),
+    path('user_home/',user_dashboard_home),
+    path('company_home', company_dashboard_home),
+    path('login/',login_base),
+    path('userlogin/', user_login),
 
     # User URLs
     path('login/', login_view, name='login'),

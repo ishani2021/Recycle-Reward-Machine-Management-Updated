@@ -5,6 +5,36 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .models import Waste, wasteType, user, Order
 
+def initial(request):
+    return render(request,'initialpage.html')
+
+def select_user(request):
+    return render(request, 'selectuser.html')
+
+def view_dashboard(request):
+    return render(request,'dashboard.html')
+
+def user_dashboard_home(request):
+    return render(request,'user_dashboard.html')
+
+def company_dashboard_home(request):
+    return render(request, 'company_dashboard.html')
+
+def login_base(request):
+    return render(request, 'loginbase.html')
+
+def user_login(request):
+    if request.method=="POST":
+        name = request.POST['name']
+        password = request.POST['password']
+        user = authenticate(username=name, password = password)
+        if user is not None:
+            login(request, user)
+            return redirect('user_home')
+        else :
+            return render(request,'userlogin.html',{'error':'Invalid Credentials'})
+    return render(request, 'userlogin.html')
+
 def company_check(user):
     # Check if the user is part of the company group or has a company-specific attribute
     return user.is_staff  # Example: Assuming 'is_staff' is used to denote company users

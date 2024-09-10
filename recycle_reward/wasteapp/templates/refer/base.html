@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        nav {
+            background-color: lightblue;
+            padding: 15px;
+        }
+
+        nav a {
+            color: #fff; /* Text color */
+            text-decoration: none; /* Remove underline */
+            padding: 10px 20px; /* Padding around each link */
+            margin: 0px 10px; /* Spacing between links */
+            border-radius: 5px; /* Rounded corners */
+            background-color: #555;
+            flex-wrap: wrap;
+        }
+
+        nav a:hover {
+            background-color: aqua; /* Background color on hover */
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex; /* Use flexbox */
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            flex-direction: row; /* Display items in a row */
+        }
+
+        li {
+            margin-right: 20px;
+            margin-bottom: 25px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %} {% endblock %}
+    </title>
+</head>
+<body>
+    <header>
+        <center>
+        <h1>Recycling Waste Management</h1>
+        <center>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <hr>
+        <center>
+        <p>&copy; 2024 Recycling Waste Management</p>
+        </center>
+    </footer>
+</body>
+</html>
+
+<!--
+<nav>
+    <ul>
+        <li><a href="{% url 'user_dashboard.html' %}">Dashboard</a></li>
+        {% if user.is_staff %}
+            <li><a href="{% url 'company_dashboard.html' %}">Company Dashboard</a></li>
+        {% endif %}
+        <li><a href="{% url 'update_profile.html' %}">Profile</a></li>
+        <li><a href="{% url 'logout.html' %}">Logout</a></li>
+    </ul>
+</nav>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        nav {
+            background-color: lightblue;
+            padding: 15px;
+        }
+
+        nav a {
+            color: #fff; /* Text color */
+            text-decoration: none; /* Remove underline */
+            padding: 10px 20px; /* Padding around each link */
+            margin: 0px 10px; /* Spacing between links */
+            border-radius: 5px; /* Rounded corners */
+            background-color: #555;
+            flex-wrap: wrap;
+        }
+
+        nav a:hover {
+            background-color: aqua; /* Background color on hover */
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex; /* Use flexbox */
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            flex-direction: row; /* Display items in a row */
+        }
+
+        li {
+            margin-right: 20px;
+            margin-bottom: 25px;
+        }
+    </style>
+    <title>
+        {% block title %} {% endblock %}
+    </title>
+</head>
+<body>
+    <center>
+        <h1 style="background-color: blue; color: yellow">STUDENT COURSE REGISTRATION PORTAL</h1>
+    </center>
+    <nav>
+        <ul>
+            <li><a href="/home/">HOME</a></li>
+            <li><a href="/studentlist/">STUDENT LIST</a></li>
+            <li><a href="/courselist/">COURSE LIST</a></li>
+            <li><a href="/register/">REGISTER</a></li>
+            <li><a href="/enrolledlist/">ENROLLED LIST</a></li>
+            <li><a href="/addproject/">ADD PROJECT</a></li>
+            <li><a href="/genericlistviewstudent/">GENERIC STUDENT LIST VIEW</a></li>
+            <li><a href="/download_course_table_as_csv/">DOWNLOAD COURSE AS CSV</a></li>
+            <li><a href="/download_course_table_as_pdf/">DOWNLOAD COURSE AS PDF</a></li>
+        </ul>
+    </nav>
+    <section>
+        {% block content %} {% endblock %}
+    </section>
+    <footer>
+        <hr/>
+        <center>
+            &copy; Designed and Developed by Dr. Harish Kumar B T, Dept. of CSE, BIT, Bangalore-04
+        </center>
+    </footer>
+</body>
+</html>
+
+-->
+

@@ -1,0 +1,27 @@
+{%extends 'initialpage.html'%}
+{%block title%} User Login {%endblock%}
+{%block content%}
+
+{%block login_form%}
+<form method="POST" action="">
+    {% csrf_token %}
+    <label for="name">Username:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <input type="submit" value="Login">
+</form>
+
+{%endblock%}
+{%block login_options%} 
+<nav>
+    <ul>
+        <li><a href="/signup/">Signup</a></li> <!-- can we make it to have different behaviour depending on whether it is user or company? -->
+        <li><a href="/selectuser/">Back</a></li>
+    </ul>
+</nav>
+<!--buttons instead?-->
+{%endblock%}
+{%endblock%}

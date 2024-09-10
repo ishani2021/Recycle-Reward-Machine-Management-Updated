@@ -1,0 +1,23 @@
+{%extends 'initialpage.html'%}
+{%block content%}
+<!--
+<div id="sidebar">
+    {% block sidebar %}
+    <ul>
+        <li><a href="update/">Update Profile</a></li>
+        {%block side_options%} {%endblock%}
+        <li><a href="/selectuser/">Logout</a></li>
+    </ul>
+    {% endblock %}
+</div>
+-->
+
+<nav>
+    <ul>
+        <li><a href="update/">Update Profile</a></li>
+        {%block nav_options%} {%endblock%}
+        <li><a href="/selectuser/">Logout</a></li>
+    </ul>
+</nav>
+{%block text%} {%endblock%}
+{%endblock%}

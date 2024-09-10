@@ -1,0 +1,10 @@
+{%extends 'initialpage.html' %}
+{%block title%} Select User {%endblock%}
+{%block content%}
+{% load static %}
+<center>
+<a href='/userlogin/'><img src="{% static 'images/user2.jpg' %}" alt="Image Description" width=100 height=100></a>
+<a href=''><img src="{% static 'images/company_icon.png' %}" alt="Image Description" width=120 height=120></a>
+<a href='/admin/'><img src="{% static 'images/admin_icon.jpg' %}" alt="Image Description" width=120 height=120></a>
+<center>
+{%endblock%}

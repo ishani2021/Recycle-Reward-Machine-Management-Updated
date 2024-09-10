@@ -12,7 +12,13 @@ class user(AbstractUser):
     credits = models.IntegerField(default=0)
     
     def increment_credits(self):
+        #adding a single credit for one object
         self.credits+=1
+        self.save()
+        
+    def increment_credits(self, nobj):
+        #adding multiple credits for multiple objects
+        self.credits += nobj
         self.save()
     
     def decrement_credits(self, amt):
@@ -33,11 +39,8 @@ class wasteType(Enum):
         
 class Waste(models.Model):
     waste_type = models.CharField(max_length=100, choices = wasteType.choices())
-    created_at = models.DateTimeField(auto_now_add=True)
+    #created_at = models.DateTimeField(auto_now_add=True)
     count = models.IntegerField(default=0)
-    
-    def __str__(self):
-        return f"{self.waste_type} waste was added on {self.created_at}"
 
     def increment_count(self):
         self.count += 1

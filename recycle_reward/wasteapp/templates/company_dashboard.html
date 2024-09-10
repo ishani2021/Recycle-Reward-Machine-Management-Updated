@@ -1,18 +1,12 @@
-{% extends 'base.html' %}
-
-{% block title %}Company Dashboard{% endblock %}
-
-{% block content %}
-    <h2>Company Dashboard</h2>
-    <a href="{% url 'place_order' %}">Place New Order</a>
-
-    <h3>Your Orders:</h3>
-    <ul>
-        {% for order in orders %}
-            <li>
-                {{ order.waste_type }} - {{ order.quantity }} units ({{ order.status }})
-                <a href="{% url 'cancel_order' order.id %}">Cancel</a>
-            </li>
-        {% endfor %}
-    </ul>
-{% endblock %}
+{%extends 'dashboard.html'%}
+{%block title%} User Dashboard {%endblock%}
+{%block nav_options%}
+<li><a href="place_order/">Place Orders</a></li>
+<li><a href="past_order/">View Past Orders</a></li>
+<li><a href="update_order/">Cancel/Update Order</a></li>
+{%endblock%}
+{%block text%}
+<h2> Welcome Company! </h2>
+<p> This is an initiative to keep the environment green and clean. <br>
+We are committed to helping you carry out your task efficiently. </p>
+{%endblock%}
